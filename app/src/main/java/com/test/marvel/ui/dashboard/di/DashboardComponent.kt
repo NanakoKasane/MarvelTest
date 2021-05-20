@@ -2,6 +2,7 @@ package com.test.marvel.ui.dashboard.di
 
 import com.test.marvel.di.ActivityScope
 import com.test.marvel.ui.dashboard.DashboardActivity
+import com.test.marvel.ui.dashboard.characters.list.CharactersFragment
 import dagger.Subcomponent
 
 @ActivityScope
@@ -13,6 +14,6 @@ interface DashboardComponent {
     }
 
     fun inject(activity: DashboardActivity)
-//    fun inject(fragment: XFragment)
+    fun inject(fragment: CharactersFragment)
 
 }

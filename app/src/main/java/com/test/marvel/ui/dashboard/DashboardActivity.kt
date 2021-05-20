@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.test.marvel.App
 import com.test.marvel.R
 import com.test.marvel.databinding.ActivityDashboardBinding
+import com.test.marvel.ui.dashboard.characters.list.CharactersFragment
 import com.test.marvel.ui.dashboard.di.DashboardComponent
 import javax.inject.Inject
 
@@ -28,28 +29,36 @@ class DashboardActivity : AppCompatActivity() {
         binding.viewmodel = viewModel
         viewModel.model.observe(this,  Observer(::updateUi) )
 
-        loadLoginView()
-    }
-
-    private fun loadLoginView(){
-//        supportFragmentManager.beginTransaction()
-//                .replace(
-//                        R.id.dashboard_content,
-//                )
-//                .commit()
+        loadCharactersView()
     }
 
     private fun updateUi(uiModel : DashboardViewModel.UiModel) {
         viewModel.hideLoading()
         when (uiModel) {
-//            is OnboardingViewModel.UiModel.NavigateLogin -> loadLoginView()
-//            is OnboardingViewModel.UiModel.NavigatePinRecover -> loadPinRecoverView()
-//            is OnboardingViewModel.UiModel.NavigateConnectionTutorialBegin -> loadConnectionTutorialBeginView()
-//            is OnboardingViewModel.UiModel.NavigateBluetoothList -> loadBluetoothListView()
-//            is OnboardingViewModel.UiModel.NavigateDeviceConnected -> loadDeviceConnectedView()
-//            is OnboardingViewModel.UiModel.NavigateDashboard -> loadDashboard()
+//            is DashboardViewModel.UiModel.NavigateCharacterDetail -> loadCharacterDetailView()
         }
     }
+
+    private fun loadCharactersView(){
+        supportFragmentManager.beginTransaction()
+                .replace(
+                        R.id.dashboard_content,
+                        CharactersFragment.newInstance(),
+                        CharactersFragment::javaClass.name
+                )
+                .commit()
+    }
+
+    private fun loadCharacterDetailView(){
+//        supportFragmentManager.beginTransaction()
+//                .replace(
+//                        R.id.dashboard_content,
+//                        CharactersFragment.newInstance(),
+//                        CharactersFragment::javaClass.name
+//                )
+//                .commit()
+    }
+
 
 
 }

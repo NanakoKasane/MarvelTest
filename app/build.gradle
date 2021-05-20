@@ -34,11 +34,15 @@ android {
     flavorDimensions "environment"
     productFlavors {
         pre {
-            buildConfigField 'String', 'API_URL', '"https://netfit.178.62.84.206.getmoss.site/api/"'
+            buildConfigField 'String', 'API_URL', '"http://gateway.marvel.com/v1/public/"'
+            buildConfigField 'String', 'MARVEL_APIKEY_PUBLIC', '"64845c44031fed84d6ce23f956d4cb38"'
+            buildConfigField 'String', 'MARVEL_APIKEY_PRIVATE', '"27dd600ac70cc981dfcb6d5550e28259bb74f9b2"'
         }
         pro {
             dimension "environment"
-            buildConfigField 'String', 'API_URL', '"https://netfit.178.62.84.206.getmoss.site/api/"'
+            buildConfigField 'String', 'API_URL', '"http://gateway.marvel.com/v1/public/"'
+            buildConfigField 'String', 'MARVEL_APIKEY_PUBLIC', '"64845c44031fed84d6ce23f956d4cb38"'
+            buildConfigField 'String', 'MARVEL_APIKEY_PRIVATE', '"27dd600ac70cc981dfcb6d5550e28259bb74f9b2"'
         }
     }
 

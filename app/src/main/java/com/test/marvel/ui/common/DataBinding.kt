@@ -1,8 +1,18 @@
 package com.test.marvel.ui.common
 
 import android.view.View
+import android.widget.ImageView
 import androidx.databinding.BindingAdapter
-import androidx.databinding.ObservableField
+import com.bumptech.glide.Glide
+import com.test.marvel.R
+
+@BindingAdapter("loadImageUrl")
+fun ImageView.loadImageUrl(imageUrl: String?) {
+    Glide.with(this.context)
+            .load(imageUrl)
+            .placeholder(R.drawable.placeholder)
+            .into(this)
+}
 
 @BindingAdapter("visibleOrGone")
 fun View.visibleOrGone(visible: Boolean) {
@@ -16,13 +26,6 @@ fun View.visibleOrInvisible(visible: Boolean) {
 
 @BindingAdapter("enableButton")
 fun View.enableButton(enable: Boolean) {
-    this.isEnabled = enable
-    this.alpha = if (enable) 1f else 0.7f
-}
-
-@BindingAdapter(value = ["bind:userId", "bind:pin"], requireAll = true)
-fun View.enableButtonLogin(userIdObservable: ObservableField<String>, pinObservable: ObservableField<String>) {
-    val enable = !userIdObservable.get().isNullOrEmpty() && !pinObservable.get().isNullOrEmpty()
     this.isEnabled = enable
     this.alpha = if (enable) 1f else 0.7f
 }
