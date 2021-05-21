@@ -29,11 +29,27 @@ class CharactersViewModel @Inject constructor(private val charactersRepository: 
 
     }
 
+    fun getCharacterDetail(id : Int?){
+        _model.value = UiModel.Loading
+
+        GlobalScope.launch {
+            val result = charactersRepository.getCharacterDetail(id)
+            result.fold({
+                _model.postValue(UiModel.FailureCharacterDetail)
+            }, {
+                _model.postValue(UiModel.SuccessCharacterDetail(it))
+            })
+        }
+    }
+
 
     sealed class UiModel {
         object Loading : UiModel()
         object FailureMoviesList : UiModel()
-        data class SuccessMoviesList(val movies : List<Character>) : UiModel()
+        data class SuccessMoviesList(val characters : List<Character>?) : UiModel()
+
+        object FailureCharacterDetail : UiModel()
+        data class SuccessCharacterDetail(val character : Character?) : UiModel()
     }
 
 

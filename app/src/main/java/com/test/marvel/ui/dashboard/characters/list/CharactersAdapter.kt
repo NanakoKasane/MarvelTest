@@ -11,7 +11,7 @@ import com.test.marvel.databinding.ItemCharacterBinding
 import com.test.marvel.domain.Character
 
 class CharactersAdapter(
-        private val items: List<Character>,
+        private val items: List<Character>?,
         private val itemClickListener : (Character?) -> Unit
 ) : RecyclerView.Adapter<CharactersAdapter.CharactersViewHolder>(), Filterable {
     var charactersFilterList : List<Character>? = null
@@ -50,7 +50,7 @@ class CharactersAdapter(
                 } else {
                     val resultList = ArrayList<Character>()
                     items?.forEach {
-                        if (it.name?.toLowerCase()?.contains(constraint.toString().toLowerCase())) {
+                        if (it.name?.toLowerCase()?.contains(constraint.toString().toLowerCase()) == true ) {
                             resultList.add(it)
                         }
                     }

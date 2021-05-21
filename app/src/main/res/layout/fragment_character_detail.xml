@@ -94,47 +94,42 @@
                 android:layout_height="match_parent">
 
 
-<!--                <TextView-->
-<!--                    android:id="@+id/tv_sinopsis_title"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="16dp"-->
-<!--                    android:layout_marginLeft="16dp"-->
-<!--                    android:layout_marginTop="16dp"-->
-<!--                    android:text="@string/tv_sinopsis_title"-->
-<!--                    android:textColor="@color/colorPrimary"-->
-<!--                    android:textSize="18sp"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@+id/tv_year" />-->
 
-<!--                <TextView-->
-<!--                    android:id="@+id/tv_sinopsis"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_margin="16dp"-->
-<!--                    android:layout_marginStart="16dp"-->
-<!--                    android:layout_marginLeft="16dp"-->
-<!--                    android:layout_marginTop="8dp"-->
-<!--                    android:layout_marginEnd="16dp"-->
-<!--                    android:layout_marginRight="16dp"-->
-<!--                    android:text="@{movie.description}"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@+id/tv_sinopsis_title" />-->
-<!--&lt;!&ndash;                tools:text="Vincent Miles es un experto instructor de tiro de la Policia Nacional. Con solo 25 años recibe ofertas para formar parte de los cuerpos de élite del gobierno, pero prefiere conservar la integridad de su trabajo. Un día conoce al agente Milo Cardena que, sin saberlo, lo arrastra a un infernal remolino de violencia en medio de una guerra interna de la policía. Sin saber cómo manejar la situación, Vicent se verá obligado a matar para salvar su vida.Vincent Miles es un experto instructor de tiro de la Policia Nacional. Con solo 25 años recibe ofertas para formar parte de los cuerpos de élite del gobierno, pero prefiere conservar la integridad de su trabajo. Un día conoce al agente Milo Cardena que, sin saberlo, lo arrastra a un infernal remolino de violencia en medio de una guerra interna de la policía. Sin saber cómo manejar la situación, Vicent se verá obligado a matar para salvar su vida.Vincent Miles es un experto instructor de tiro de la Policia Nacional. Con solo 25 años recibe ofertas para formar parte de los cuerpos de élite del gobierno, pero prefiere conservar la integridad de su trabajo. Un día conoce al agente Milo Cardena que, sin saberlo, lo arrastra a un infernal remolino de violencia en medio de una guerra interna de la policía. Sin saber cómo manejar la situación, Vicent se verá obligado a matar para salvar su vida.Vincent Miles es un experto instructor de tiro de la Policia Nacional. Con solo 25 años recibe ofertas para formar parte de los cuerpos de élite del gobierno, pero prefiere conservar la integridad de su trabajo. Un día conoce al agente Milo Cardena que, sin saberlo, lo arrastra a un infernal remolino de violencia en medio de una guerra interna de la policía. Sin saber cómo manejar la situación, Vicent se verá obligado a matar para salvar su vida.Vincent Miles es un experto instructor de tiro de la Policia Nacional. Con solo 25 años recibe ofertas para formar parte de los cuerpos de élite del gobierno, pero prefiere conservar la integridad de su trabajo. Un día conoce al agente Milo Cardena que, sin saberlo, lo arrastra a un infernal remolino de violencia en medio de una guerra interna de la policía. Sin saber cómo manejar la situación, Vicent se verá obligado a matar para salvar su vida."&ndash;&gt;-->
+                <TextView
+                    android:id="@+id/tv_web_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="24dp"
+                    android:textColor="@color/blue_link"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-<!--                <TextView-->
-<!--                    android:id="@+id/tv_year"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="16dp"-->
-<!--                    android:layout_marginLeft="16dp"-->
-<!--                    android:layout_marginTop="16dp"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    tools:text="2010"-->
-<!--                    android:text="@{movie.year.toString()}"/>-->
+                <TextView
+                    android:id="@+id/tv_wiki"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="24dp"
+                    android:textColor="@color/blue_link"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_web_detail" />
 
+                <TextView
+                    android:id="@+id/tv_comic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="24dp"
+                    android:textColor="@color/blue_link"
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_wiki" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

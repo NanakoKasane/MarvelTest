@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.test.marvel.App
 import com.test.marvel.R
 import com.test.marvel.databinding.ActivityDashboardBinding
+import com.test.marvel.ui.dashboard.characters.detail.CharacterDetailFragment
 import com.test.marvel.ui.dashboard.characters.list.CharactersFragment
 import com.test.marvel.ui.dashboard.di.DashboardComponent
 import javax.inject.Inject
@@ -35,7 +36,7 @@ class DashboardActivity : AppCompatActivity() {
     private fun updateUi(uiModel : DashboardViewModel.UiModel) {
         viewModel.hideLoading()
         when (uiModel) {
-//            is DashboardViewModel.UiModel.NavigateCharacterDetail -> loadCharacterDetailView()
+            is DashboardViewModel.UiModel.NavigateToCharacterDetail -> loadCharacterDetailView(uiModel.id)
         }
     }
 
@@ -49,14 +50,15 @@ class DashboardActivity : AppCompatActivity() {
                 .commit()
     }
 
-    private fun loadCharacterDetailView(){
-//        supportFragmentManager.beginTransaction()
-//                .replace(
-//                        R.id.dashboard_content,
-//                        CharactersFragment.newInstance(),
-//                        CharactersFragment::javaClass.name
-//                )
-//                .commit()
+    private fun loadCharacterDetailView(characterId : Int?){
+        supportFragmentManager.beginTransaction()
+                .replace(
+                        R.id.dashboard_content,
+                        CharacterDetailFragment.newInstance(characterId),
+                        CharacterDetailFragment::javaClass.name
+                )
+                .addToBackStack(null)
+                .commit()
     }
 
 

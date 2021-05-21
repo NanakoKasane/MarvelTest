@@ -3,4 +3,9 @@
     <string name="err_obtain_characters">No se han podido obtener los personajes. Por favor, revise su conexión a internet e inténtelo de nuevo más tarde.</string>
     <string name="tv_characters">Personajes</string>
     <string name="tv_no_characters">No hay personajes</string>
+    <string name="err_character_detail">No se ha podido obtener el detalle del personaje. Por favor, revise su conexión a internet e inténtelo de nuevo más tarde.</string>
+    <string name="tv_web_detail">Ver web detalle</string>
+    <string name="tv_wiki">Ver Wiki</string>
+    <string name="tv_comic">Ver comics</string>
+
 </resources>

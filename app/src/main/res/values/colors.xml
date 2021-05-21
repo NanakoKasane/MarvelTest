@@ -14,4 +14,5 @@
     <color name="blue_default">#0081CA</color>
     <color name="blue_dark">#005797</color>
     <color name="blue_darkest">#222B45</color>
+    <color name="blue_link">#0081CB</color>
 </resources>

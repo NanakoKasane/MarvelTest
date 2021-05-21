@@ -12,16 +12,12 @@ class DashboardViewModel @Inject constructor() : ViewModel(), HasLoading by HasL
     val model: LiveData<UiModel> = _model
 
     // TODO navigate to ...
+    fun navigateToCharacterDetail(id : Int?){
+        _model.value = UiModel.NavigateToCharacterDetail(id)
+    }
 
 
     sealed class UiModel {
-        object NavigateLogin : UiModel()
-        object NavigatePinRecover : UiModel()
-
-        object NavigateConnectionTutorialBegin : UiModel()
-        object NavigateBluetoothList : UiModel()
-        object NavigateDeviceConnected : UiModel()
-        object NavigateDashboard : UiModel()
-        data class GetMessagesFailure(val message: String) : UiModel()
+        data class NavigateToCharacterDetail(val id : Int?) : UiModel()
     }
 }

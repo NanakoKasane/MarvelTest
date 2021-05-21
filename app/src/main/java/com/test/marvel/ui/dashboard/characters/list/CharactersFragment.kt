@@ -65,28 +65,27 @@ class CharactersFragment : Fragment(){
             is CharactersViewModel.UiModel.FailureMoviesList -> {
                 dashboardViewModel.hideLoading()
                 Toast.makeText(context, getString(R.string.err_obtain_characters), Toast.LENGTH_SHORT).show()
-                binding.tvNoMovies.visibility = View.VISIBLE
+                binding.tvNoCharacters.visibility = View.VISIBLE
             }
 
             // Movie list obtained
             is CharactersViewModel.UiModel.SuccessMoviesList -> {
                 dashboardViewModel.hideLoading()
-                binding.tvNoMovies.visibility = View.INVISIBLE
+                binding.tvNoCharacters.visibility = View.INVISIBLE
 
-                setupRecyclerView(uiModel.movies)
+                setupRecyclerView(uiModel.characters)
             }
 
         }
     }
 
-    private fun setupRecyclerView(movies : List<Character>){
+    private fun setupRecyclerView(movies : List<Character>?){
         adapter = CharactersAdapter(movies) {
             // item click listener
-            // TODO:
-            // dashboardViewModel.navigateToCharacterDetail(it)
+             dashboardViewModel.navigateToCharacterDetail(it?.id)
         }
-        binding.rvMovies.layoutManager = GridLayoutManager(activity, 2) // 2 rows
-        binding.rvMovies.adapter  = adapter
+        binding.rvCharacters.layoutManager = GridLayoutManager(activity, 2) // 2 rows
+        binding.rvCharacters.adapter  = adapter
     }
 
 

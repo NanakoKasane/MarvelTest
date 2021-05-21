@@ -71,7 +71,7 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_movies"
+            android:id="@+id/rv_characters"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="16dp"
@@ -83,7 +83,7 @@
         </androidx.recyclerview.widget.RecyclerView>
 
         <TextView
-            android:id="@+id/tv_no_movies"
+            android:id="@+id/tv_no_characters"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -93,7 +93,7 @@
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/rv_movies"
+            app:layout_constraintTop_toTopOf="@+id/rv_characters"
             android:visibility="invisible"
             android:text="@string/tv_no_characters" />
 

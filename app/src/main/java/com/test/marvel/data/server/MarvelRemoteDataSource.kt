@@ -10,6 +10,8 @@ class MarvelRemoteDataSource @Inject constructor(private val marvelService: Marv
     override suspend fun getCharacters(md5Digest: String, timestamp: String, apikey: String): Response<CharactersResponse> =
         marvelService.getCharacters(md5Digest, timestamp, apikey)
 
+    override suspend fun getCharacterDetail(id: Int?, md5Digest: String, timestamp: String, apikey: String): Response<CharactersResponse> =
+            marvelService.getCharacterDetail(id, md5Digest, timestamp, apikey)
 
 
 }

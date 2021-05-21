@@ -1,7 +1,11 @@
 package com.test.marvel.ui.common
 
+import android.os.Build
+import android.text.Html
+import android.text.method.LinkMovementMethod
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.test.marvel.R
@@ -13,6 +17,18 @@ fun ImageView.loadImageUrl(imageUrl: String?) {
             .placeholder(R.drawable.placeholder)
             .into(this)
 }
+
+@BindingAdapter("setLink")
+fun TextView.setLink(concreteLink : String?, wordToSee : String ){
+    isClickable = true
+    movementMethod = LinkMovementMethod.getInstance()
+    val link = "<a href='${concreteLink}'>${wordToSee}</a>"
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+        text = Html.fromHtml(link,  Html.FROM_HTML_MODE_COMPACT)
+    } else
+        text = Html.fromHtml(link)
+}
+
 
 @BindingAdapter("visibleOrGone")
 fun View.visibleOrGone(visible: Boolean) {
